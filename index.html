@@ -1,0 +1,122 @@
+---
+title: Hypnotherapy & Energy Healing
+permalink: /
+---
+<section class="hero bg" style="background-image:url('{{ '/assets/img/hero.jpg' | relative_url }}')">
+  <div class="wrap">
+    <h1>Tranceform Hypnotherapy</h1>
+    <p>Your symptoms are not a diagnosis. They are a programmed state of consciousness. And states can be cleared.</p>
+    <div class="btn-row">
+      <a class="btn" href="{{ '/book-a-free-consult/' | relative_url }}">Work With Me</a>
+      <a class="btn btn--ghost" href="{{ '/free/' | relative_url }}" style="color:#fff">Free Resources</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <img src="{{ '/assets/img/philosophy-collage.png' | relative_url }}" alt="The nervous system, the subconscious iceberg, and Melissa" loading="lazy">
+    <div>
+      <h2><span class="accent">Tranceform</span> Philosophy</h2>
+      <p>Most of what you experience as anxiety, depression, chronic pain, bad habits, emotional reactions, and self-sabotage is not who you are. It is a state — encoded into your nervous system through experience, running automatically beneath your awareness.</p>
+      <p>The Tranceform Method works at the level where the program lives. Not in your thoughts. In your subconscious mind, your nervous system, your physical tissues, and your energy field. When the program clears, the state dissolves. Not managed. Not coped with. Gone.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bg bg--navy" style="background-image:url('{{ '/assets/img/protocol-bg.jpg' | relative_url }}')">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow" style="color:#fff;opacity:.8">Free e-book</span>
+      <h2>Tranceform 30-Day Reset Protocol.</h2>
+      <p>This protocol helps you to live in complete alignment — simple morning and night prompts to rewire your brain in 30 days.</p>
+      <a class="btn btn--light" href="{{ '/free/30-day-protocol/' | relative_url }}">Download For Free</a>
+    </div>
+    <img src="{{ '/assets/img/protocol-ebook.png' | relative_url }}" alt="Rewire Your Brain — 30 Day Protocol e-book" loading="lazy" style="border-radius:var(--radius)">
+  </div>
+</section>
+
+<section class="section bg bg--brown center" style="background-image:url('{{ '/assets/img/mission-bg.png' | relative_url }}')">
+  <div class="wrap narrow">
+    <h2>Melissa’s Mission</h2>
+    <p>Through witnessing countless people feeling confused, stuck on strong medications, and lost in outdated diagnoses while working in the mental health sector — Melissa felt deep down that there must be better solutions to the challenges people experience, rather than a lifelong diagnosis and a prescription for symptom management.</p>
+    <p>Melissa left everything behind in Canada to travel and experience ancient spiritual practices and sacred psychoenergetic healing modalities across the world. While there, she discovered the interplay between neuroscience, biology, spirituality, and consciousness. Later in her travels, she found hypnosis and the massive impact it had on others, and devoted herself to sharing the wisdom and tools she acquired.</p>
+    <p>Melissa does not use a diagnostic model; she sees every symptom through an energetic, emotional, and spiritual model. She sees everyone she works with as a pure light. With this, any stress, negative feeling, or habit is not someone’s true nature and can therefore be relieved with the right tools and understanding. Melissa has a way to help you step into your next level — no matter where you are in your journey.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <img src="{{ '/assets/img/mel-portrait.png' | relative_url }}" alt="Melissa Brown" loading="lazy" style="border-radius:var(--radius)">
+    <div>
+      <h2>Hey, it’s Mel</h2>
+      <p>I'm a Hypnotherapist and Energy Healer, accredited with a Masters in Clinical Psychology. I'm certified in Hypnosis, Regression, and Trauma Resolution. If you want to read more about my stories, struggles — and how I got here, check out my about section.</p>
+      <a class="btn" href="{{ '/mission/' | relative_url }}">About Melissa</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <h2 class="center">Certificates</h2>
+    <div class="certs">
+      {% for i in (1..8) %}
+      <a href="{{ '/assets/img/cert-' | append: i | append: '.png' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/img/cert-' | append: i | append: '.png' | relative_url }}" alt="Certificate {{ i }}" loading="lazy"></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section bg bg--dark" style="background-image:url('{{ '/assets/img/research-bg.png' | relative_url }}')">
+  <div class="wrap split">
+    <div>
+      <h2>The Research</h2>
+      <p>Did you know that your conscious mind is only aware of about 5% of what you experience — and that 95% is outside of your awareness? That unconscious material — deeply encoded programs, conditioning, memories, emotions and subconscious identity — is stored in your nervous system, physical tissues, and subtle energy fields.</p>
+      <a class="btn btn--light" href="{{ '/the-science/' | relative_url }}">Discover the Research</a>
+    </div>
+    {% include video.html id="eXVe52p6aKo" %}
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="section">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Research &amp; Articles</span><h2>Latest from the blog</h2></div>
+    <div class="cards" style="margin-top:32px">
+      {% for post in site.posts limit:3 %}{% include post-card.html post=post %}{% endfor %}
+    </div>
+    <p class="center" style="margin-top:32px"><a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">View all articles</a></p>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section--tight panel-white">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Free · Live on Zoom</span>
+      <h2>Join the free weekly workshop</h2>
+      <p>Every week Melissa goes live to teach a Tranceform technique, guide a short group hypnosis and answer your questions. Come as you are — cameras optional.</p>
+      <a class="btn" href="{{ '/workshop/' | relative_url }}">Save my seat</a>
+    </div>
+    <div>
+      <ul class="checks">
+        <li>A new nervous-system or subconscious technique each week</li>
+        <li>Guided group hypnosis you can do from home</li>
+        <li>Live Q&amp;A with Melissa</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="center">"My Life Will Never Be The Same."</h2>
+    <div class="quotes">
+      {% for t in site.data.testimonials %}
+      <blockquote class="quote">{{ t.text | markdownify }}<cite>— {{ t.name }}</cite></blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include newsletter.html %}

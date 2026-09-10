@@ -1,0 +1,34 @@
+---
+title: The Science
+description: How unconscious programs get stored in the body and nervous system — and how the Tranceform Method clears the charge and updates the meaning.
+permalink: /the-science/
+---
+<section class="page-hero bg bg--dark" style="background-image:url('{{ '/assets/img/research-bg.png' | relative_url }}')">
+  <div class="wrap narrow">
+    <span class="eyebrow" style="color:#fff;opacity:.8">The Research</span>
+    <h1>The Science</h1>
+    <p>Your conscious mind is aware of about 5% of what you experience. Here's what's happening in the other 95%.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap narrow prose">
+    <p>Did you know that your conscious mind is only aware of about 5% of what you experience – and that 95% is outside of your awareness? The 95% unconscious material includes all of the deeply encoded programs, societal conditioning, memories, emotions, and subconscious identity that is stored in your nervous system, physical tissues, and subtle energy fields. This unconscious material further dominates your autonomic nervous system and controls access to your higher mind, your thoughts, feelings, and behaviours. It can switch you from a rest state, to a survival and reactant state and cause you to act in a way that you later regret.</p>
+    <h2>How does this material get stored in the unconscious mind in a way that affects us?</h2>
+    <p>Every significant event you experience throughout life is felt by the body. When something is too stressful or uncomfortable, the conscious mind skips a beat and goes offline. Therefore the body senses it is in danger, and never processes that the danger is over. This creates many sensitized and highly reactive open loops and unresolved feelings all throughout the body. This means that any subtle experience that is even remotely similar to that initial feeling will set off the bodily reaction before you are even consciously aware something happened.</p>
+    <p>Also over time, our identity is formed based on how we experienced events in our life, and who we felt that we were at the time. It’s like seeing your cousin upset at you as a 5 year old and deciding that you must be annoying. Living your whole life isolating yourself from others, only to go back at the age of 65 and realise that the cousin was not upset at you, they were upset at their bad grades. You realise that all along you were never annoying — that was just a false belief and a decision you made in that moment.</p>
+    <blockquote>With the Tranceform Method, we don’t analyze the story; we clear the charge and update the meaning.</blockquote>
+    <p>When you shift in perspective, the energy and emotional charge dissolve, the neural pathways lose power, the old identity constructs collapse, and your reactions shift naturally. You don’t just feel better — you feel like a different version of yourself. Old triggers no longer hook you, old pain feels neutral, and behaviors that once held you back no longer even make sense.</p>
+    {% include video.html id="eXVe52p6aKo" %}
+  </div>
+</section>
+{% assign research = site.posts | where: "category", "Research" %}
+{% if research.size > 0 %}
+<section class="section section--tight panel-white">
+  <div class="wrap">
+    <h2 class="center">Research articles</h2>
+    <div class="cards" style="margin-top:32px">{% for post in research limit:6 %}{% include post-card.html post=post %}{% endfor %}</div>
+    <p class="center" style="margin-top:32px"><a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">All articles</a></p>
+  </div>
+</section>
+{% endif %}
+{% include newsletter.html %}

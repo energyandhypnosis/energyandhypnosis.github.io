@@ -1,0 +1,19 @@
+<section class="section connect bg" style="background-image:url('{{ '/assets/img/connect-bg.png' | relative_url }}')">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow" style="color:#fff;opacity:.8">Stay in touch</span>
+      <h2>Let’s Connect</h2>
+      <p>Find free audios, podcasts, the weekly workshop and more.</p>
+      <div class="btn-row">
+        <a class="btn btn--light" href="{{ '/free/' | relative_url }}">Free Resources</a>
+        <a class="btn btn--ghost" href="{{ '/workshop/' | relative_url }}">Join the Workshop</a>
+      </div>
+      <div class="social">
+        {% for s in site.data.settings.social %}
+        <a href="{{ s.url }}" target="_blank" rel="noopener" aria-label="{{ s.name }}">{% include social-icon.html icon=s.icon %}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <img class="phone" src="{{ '/assets/img/phone-mockup.png' | relative_url }}" alt="Melissa Brown Energy on mobile" loading="lazy">
+  </div>
+</section>

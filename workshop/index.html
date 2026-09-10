@@ -1,0 +1,26 @@
+---
+title: Free Weekly Tranceform Workshop
+description: Join Melissa Brown's free weekly live workshop on Zoom — a new Tranceform technique, guided group hypnosis and live Q&A.
+permalink: /workshop/
+hide_connect: true
+---
+{%- assign w = site.data.settings.workshop -%}
+<section class="section bg bg--dark" style="background-image:url('{{ '/assets/img/connect-bg.png' | relative_url }}')">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow" style="color:#fff;opacity:.85">Free · Live on Zoom · Every week</span>
+      <h1>{{ w.name }}</h1>
+      {% if w.day != "" and w.time_24h != "" %}<p style="font-size:1.2rem"><strong>Every {{ w.day }} at {{ w.time_24h }}</strong> (Budapest time) · {{ w.duration_minutes }} minutes</p>{% endif %}
+      <p>Spend an hour with Melissa each week to learn how your subconscious and nervous system work — and practise clearing the programs that keep you stuck.</p>
+      <ul class="checks">
+        <li>A new Tranceform technique every week</li>
+        <li>Guided group hypnosis you can do from home</li>
+        <li>Live Q&amp;A — bring your questions</li>
+        <li>The Zoom link and reminders sent by email</li>
+      </ul>
+    </div>
+    <div>
+      {% include optin-form.html form="workshop" next="/workshop/thank-you/" title="Save my free seat" intro="You'll get the Zoom link and a reminder by email." button="Save My Seat" %}
+    </div>
+  </div>
+</section>

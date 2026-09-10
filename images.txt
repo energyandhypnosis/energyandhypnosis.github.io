@@ -1,0 +1,25 @@
+# path  url   — downloaded once by .github/workflows/import.yml (skips files that already exist)
+assets/img/logo-white.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/16bea4-c66-0327-52a5-173d856ce415_693d96ce-4b81-4968-9f43-d23b48cd7ef5.png
+assets/img/favicon.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148717443/brand_styleguide/images/d5d5a6-b78-7bb-ea-550fa32803f_MBE_BLACK_LOGO_1_.png
+assets/img/hero.jpg https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/3a253bc-f34b-41f0-0acc-6e042752a7b3_image_3.jpg
+assets/img/philosophy-collage.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/cdaff-621-74ac-c574-0e56073b102_Group_1410128436.png
+assets/img/protocol-bg.jpg https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/5483dfc-d003-e7db-aa3d-3ad188a0242c_William_Shelever32.jpg
+assets/img/mission-bg.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/0e1cba-2672-f74e-142-85e2a575a7a2_Frame_1410128462_1_.png
+assets/img/mel-portrait.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/baab33-e177-2567-52de-f16a2c75102_image_2.png
+assets/img/cert-1.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/a6041-c38-01a-2eac-8a544fa04811_Image.png
+assets/img/cert-2.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/7674ff-647-dc-04eb-43170b2665_Image_1_.png
+assets/img/cert-3.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/1bc2721-77e-a426-ef7c-a2dd534d8d3_Image_2_.png
+assets/img/cert-4.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/1dc608b-def4-3f41-cd5-05475221c14_Image_3_.png
+assets/img/cert-5.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/ad7d0dd-b28b-64e-b06c-c20f2a81ad3b_7ae430fa-a9dd-4e02-84f8-2233cd454b69.png
+assets/img/cert-6.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/fd0d43-250-13a-4ebb-b652a0f7f4f_Frame_1410128483.png
+assets/img/cert-7.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/0870a81-e646-37ac-421-eed14355571a_Frame_1410128483_1_.png
+assets/img/cert-8.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/3878cc-a1b-fe75-8272-07c2db00b5_Frame_1410128484_3_.png
+assets/img/research-bg.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/01878-011a-2531-2a76-a0bb13e3f5_Frame_1410128470.png
+assets/img/connect-bg.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/df5b1a4-4ab8-a1e0-b111-b3ab56d6dc3c_3fc374c3-24e5-4fb9-83d2-d957292fe570.png
+assets/img/phone-mockup.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/23a7f47-3ddf-ca7-e850-f4ffd15505cd_Device_14PM_1_.png
+assets/img/mel-footer.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165123532/settings_images/7d1428-27b4-f7ee-5cbf-28a52252cd6_William_Shelever_55_1_1.png
+assets/img/protocol-ebook.png https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165608437/settings_images/716275-cee7-547-38da-85ded113f4c6_0a538b61-64a7-4baf-bfc3-bfe5d4f2cb6a.png
+assets/img/optin-bg.jpg https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2165608437/settings_images/cc0cbd7-3645-c86-dcd-34fb6e223d01_William_Shelever27_1_2.jpg
+assets/fonts/inter-latin-wght-normal.woff2 https://cdn.jsdelivr.net/npm/@fontsource-variable/inter@5/files/inter-latin-wght-normal.woff2
+assets/fonts/playfair-display-latin-wght-normal.woff2 https://cdn.jsdelivr.net/npm/@fontsource-variable/playfair-display@5/files/playfair-display-latin-wght-normal.woff2
+assets/fonts/playfair-display-latin-wght-italic.woff2 https://cdn.jsdelivr.net/npm/@fontsource-variable/playfair-display@5/files/playfair-display-latin-wght-italic.woff2

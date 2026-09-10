@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────
+#  Melissa Brown Energy — site settings
+#  Most day-to-day settings (email forms, workshop, social links)
+#  live in _data/settings.yml
+# ─────────────────────────────────────────────────────────────
+title: Melissa Brown Energy
+tagline: Hypnotherapy & Energy Healing
+description: >-
+  Tranceform Hypnotherapy with Melissa Brown. Book a free call and find a way to
+  reach your fullest potential. Break free from old patterns and experience real
+  change that lasts.
+url: "https://www.melissabrownenergy.com"
+baseurl: ""
+lang: en
+timezone: Europe/Budapest
+author: Melissa Brown
+
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "" }
+    values: { layout: default, image: /assets/img/hero.jpg }
+
+exclude:
+  - README.md
+  - HOW-TO-EDIT.md
+  - images.txt
+  - site-bundle.txt

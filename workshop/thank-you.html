@@ -1,0 +1,22 @@
+---
+layout: thankyou
+hide_connect: true
+sitemap: false
+title: Your seat is saved
+subtitle: The Zoom link is on its way to your inbox.
+permalink: /workshop/thank-you/
+hero: /assets/img/connect-bg.png
+---
+{%- assign w = site.data.settings.workshop -%}
+<h2>See you there<span data-first-name></span>!</h2>
+{% if w.day != "" and w.time_24h != "" %}<p style="font-size:1.15rem"><strong>Every {{ w.day }} at {{ w.time_24h }}</strong> (Budapest time) · {{ w.duration_minutes }} minutes</p>{% endif %}
+<div class="btn-row" style="justify-content:center;margin:24px 0">
+  {% if w.zoom_link != "" %}<a class="btn" href="{{ w.zoom_link }}" target="_blank" rel="noopener">Open the Zoom link</a>{% endif %}
+  <a class="btn btn--ghost" data-gcal data-day="{{ w.day }}" data-time="{{ w.time_24h }}" data-duration="{{ w.duration_minutes }}" data-title="{{ w.name }}" data-link="{{ w.zoom_link }}" href="#" target="_blank" rel="noopener">Add to Google Calendar</a>
+</div>
+<ol class="steps">
+  <li><strong>Check your inbox</strong> for the Zoom link (look in Promotions or Spam too).</li>
+  <li><strong>Set up a quiet space</strong> with headphones for the group hypnosis.</li>
+  <li><strong>While you wait:</strong> grab the free 30-Day Reset Protocol.</li>
+</ol>
+<a class="btn" href="{{ '/free/30-day-protocol/' | relative_url }}">Get the free e-book</a>

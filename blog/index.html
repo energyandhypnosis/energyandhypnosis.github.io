@@ -1,0 +1,29 @@
+---
+title: Research & Articles
+description: Articles, research and insights on hypnosis, the subconscious mind, the nervous system and energy healing from Melissa Brown.
+permalink: /blog/
+---
+<section class="page-hero bg bg--dark" style="background-image:url('{{ '/assets/img/research-bg.png' | relative_url }}')">
+  <div class="wrap narrow">
+    <span class="eyebrow" style="color:#fff;opacity:.8">The Blog</span>
+    <h1>Research &amp; Articles</h1>
+    <p>The science of the subconscious, the nervous system and energy — and how to use it to change your life.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    {% assign cats = site.posts | map: "category" | compact | uniq | sort %}
+    {% if cats.size > 1 %}
+    <div class="filters" role="group" aria-label="Filter articles">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      {% for c in cats %}<button type="button" data-filter="{{ c | slugify }}" aria-pressed="false">{{ c }}</button>{% endfor %}
+    </div>
+    {% endif %}
+    {% if site.posts.size > 0 %}
+    <div class="cards">{% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}</div>
+    {% else %}
+    <p class="center">New articles are on the way — join the newsletter below to get them first.</p>
+    {% endif %}
+  </div>
+</section>
+{% include newsletter.html %}

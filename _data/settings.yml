@@ -1,0 +1,50 @@
+# ─────────────────────────────────────────────────────────────
+#  EASY SETTINGS — edit these in GitHub (pencil icon), then commit.
+#  The site rebuilds automatically in ~1 minute.
+# ─────────────────────────────────────────────────────────────
+
+business_name: Melissa Brown Energy
+email_contact: melissabrownenergy@gmail.com
+calendly_url: https://calendly.com/melissabrownenergy/consultation
+
+# ── Email / newsletter (MailerLite) ───────────────────────────
+# Every form on the site adds the person to your newsletter.
+# 1. In MailerLite create a group called "Newsletter" plus one group per freebie.
+# 2. Create an Embedded form for each freebie (Forms → Embedded forms). In each
+#    form's settings, tick BOTH "Newsletter" and that freebie's group.
+# 3. Open the form's HTML code. You'll see a URL like:
+#    https://assets.mailerlite.com/jsonp/1234567/forms/987654321/subscribe
+#    1234567 = account_id,  987654321 = the form id.
+# Until these are filled in, forms just go straight to the thank-you page
+# (handy for testing) and NO email is saved.
+mailerlite:
+  account_id: ""
+  forms:
+    newsletter: ""      # footer / blog "join the newsletter" form
+    protocol: ""        # 30-Day Reset Protocol (PDF)
+    audio: ""           # free hypnosis audio
+    workshop: ""        # weekly workshop
+    app_waitlist: ""    # app / courses waitlist
+
+# ── Free weekly workshop ──────────────────────────────────────
+# Leave a field blank to hide it on the site.
+workshop:
+  name: Free Weekly Tranceform Workshop
+  day: ""               # e.g. Wednesday
+  time_24h: ""          # e.g. "19:00"  (Budapest time)
+  duration_minutes: 60
+  zoom_link: ""         # shown on the thank-you page and emailed by MailerLite
+
+# ── Free downloads (upload files into assets/downloads/) ──────
+downloads:
+  protocol_pdf: /assets/downloads/rewire-your-brain-30-day-protocol.pdf
+  audio_mp3: /assets/downloads/free-hypnosis-audio.mp3
+  audio_title: Free Guided Hypnosis Audio
+
+# ── Social links ──────────────────────────────────────────────
+social:
+  - { name: Facebook,  url: "https://www.facebook.com/profile.php?id=61580020853203", icon: facebook }
+  - { name: YouTube,   url: "https://www.youtube.com/@MelissaBrownEnergy", icon: youtube }
+  - { name: Instagram, url: "https://www.instagram.com/melissabrownenergy/", icon: instagram }
+  - { name: LinkedIn,  url: "https://www.linkedin.com/in/mindbodyelevation", icon: linkedin }
+  - { name: TikTok,    url: "https://www.tiktok.com/@melissabrownenergy", icon: tiktok }

@@ -1,0 +1,10 @@
+<article class="card" data-category="{{ include.post.category | slugify }}">
+  <a href="{{ include.post.url | relative_url }}"><img class="card-img" src="{{ include.post.image | default: '/assets/img/research-bg.png' | relative_url }}" alt="" loading="lazy"></a>
+  <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
+    {% if include.post.category %}<span class="tag">{{ include.post.category }}</span>{% endif %}
+    <span class="meta">{{ include.post.date | date: "%b %-d, %Y" }}</span>
+  </div>
+  <h3><a href="{{ include.post.url | relative_url }}" style="text-decoration:none">{{ include.post.title }}</a></h3>
+  <p>{{ include.post.excerpt | strip_html | truncatewords: 26 }}</p>
+  <a class="btn btn--sm btn--ghost" href="{{ include.post.url | relative_url }}">Continue reading</a>
+</article>

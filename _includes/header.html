@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+      <img src="{{ '/assets/img/logo-white.png' | relative_url }}" alt="MBE — Melissa Brown Energy" width="238" height="100">
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="site-nav">
+      {% for item in site.data.navigation %}
+        {% assign active = false %}
+        {% if page.url == item.url %}{% assign active = true %}{% elsif item.url != '/' and page.url contains item.url %}{% assign active = true %}{% endif %}
+        <a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+      <a class="btn btn--light btn--sm" href="{{ '/book-a-free-consult/' | relative_url }}">Book a Consult</a>
+    </nav>
+  </div>
+</header>

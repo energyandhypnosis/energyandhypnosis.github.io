@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article>
+  <header class="page-hero bg bg--dark" style="background-image:url('{{ page.hero | default: '/assets/img/research-bg.png' | relative_url }}')">
+    <div class="wrap narrow">
+      {% if page.category %}<span class="tag" style="background:rgba(255,255,255,.15);color:#fff">{{ page.category }}</span>{% endif %}
+      <h1 style="margin-top:.6em">{{ page.title }}</h1>
+      <p class="meta" style="color:rgba(255,255,255,.8)">{{ page.date | date: "%B %-d, %Y" }} · {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read</p>
+    </div>
+  </header>
+  <div class="section section--tight">
+    <div class="wrap narrow prose">
+      {% if page.image and page.show_cover %}<img class="post-cover" src="{{ page.image | relative_url }}" alt="">{% endif %}
+      {{ content }}
+    </div>
+  </div>
+</article>
+
+<section class="section section--tight panel-white">
+  <div class="wrap narrow center">
+    <h2>Ready to clear the program?</h2>
+    <p>Book a free 15–30 minute consultation and see how the Tranceform Method can help you.</p>
+    <div class="btn-row"><a class="btn" href="{{ '/book-a-free-consult/' | relative_url }}">Book a Free Consult</a><a class="btn btn--ghost" href="{{ '/blog/' | relative_url }}">More articles</a></div>
+  </div>
+</section>
+{% include newsletter.html %}

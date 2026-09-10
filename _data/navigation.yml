@@ -1,0 +1,6 @@
+- { title: Home, url: / }
+- { title: About, url: /mission/ }
+- { title: Research, url: /the-science/ }
+- { title: Blog, url: /blog/ }
+- { title: Free Resources, url: /free/ }
+- { title: Workshop, url: /workshop/ }

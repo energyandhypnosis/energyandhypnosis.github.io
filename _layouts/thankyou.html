@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="page-hero bg bg--navy" style="background-image:url('{{ page.hero | default: '/assets/img/protocol-bg.jpg' | relative_url }}')">
+  <div class="wrap narrow">
+    <span class="eyebrow" style="color:#fff;opacity:.8">You're in ✓</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
+  </div>
+</section>
+<section class="section">
+  <div class="wrap narrow center">
+    {{ content }}
+  </div>
+</section>

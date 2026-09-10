@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© {{ site.time | date: "%Y" }} {{ site.data.settings.business_name }}. All rights reserved.</span>
+    <nav aria-label="Footer">
+      <a href="{{ '/book-a-free-consult/' | relative_url }}">Book a Consult</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="{{ '/free/' | relative_url }}">Free Resources</a>
+      <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+      <a href="mailto:{{ site.data.settings.email_contact }}">Contact</a>
+    </nav>
+  </div>
+</footer>

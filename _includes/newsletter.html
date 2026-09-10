@@ -1,0 +1,20 @@
+{%- assign ml = site.data.settings.mailerlite -%}
+<section class="section section--tight bg bg--navy newsletter" style="background-image:url('{{ '/assets/img/protocol-bg.jpg' | relative_url }}')">
+  <div class="wrap narrow center">
+    <span class="eyebrow" style="color:#fff;opacity:.8">The Newsletter</span>
+    <h2>Free audios, research &amp; weekly insights</h2>
+    <p>Get new articles, free hypnosis audios and the weekly workshop link straight to your inbox.</p>
+    <form data-ml-account="{{ ml.account_id }}" data-ml-form="{{ ml.forms.newsletter }}" data-next="{{ '/newsletter/thank-you/' | relative_url }}" novalidate style="max-width:560px;margin:0 auto;text-align:left">
+      <div class="inline-form">
+        <input name="fields[name]" type="text" placeholder="First name" aria-label="First name" autocomplete="given-name" required>
+        <input name="fields[email]" type="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+        <button class="btn btn--light" type="submit">Subscribe</button>
+      </div>
+      <label class="consent" style="margin-top:12px">
+        <input type="checkbox" name="consent" required>
+        <span>I'd like to receive Melissa's newsletter. Unsubscribe anytime. <a href="{{ '/privacy/' | relative_url }}">Privacy policy</a></span>
+      </label>
+      <p class="form-error" role="alert" style="color:#ffd7d7"></p>
+    </form>
+  </div>
+</section>

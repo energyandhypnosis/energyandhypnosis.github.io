@@ -1,0 +1,25 @@
+{%- comment -%}
+  Usage: include optin-form.html with form="protocol" next="/free/30-day-protocol/thank-you/" button="..." title="..."
+  Every form also subscribes the person to the newsletter (set up in MailerLite — see _data/settings.yml).
+{%- endcomment -%}
+{%- assign ml = site.data.settings.mailerlite -%}
+{%- assign form_id = ml.forms[include.form] -%}
+<form class="optin" data-ml-account="{{ ml.account_id }}" data-ml-form="{{ form_id }}" data-next="{{ include.next | relative_url }}" novalidate>
+  {% if include.title %}<h3>{{ include.title }}</h3>{% endif %}
+  {% if include.intro %}<p class="meta">{{ include.intro }}</p>{% endif %}
+  <div class="field">
+    <label for="name-{{ include.form }}">First name</label>
+    <input id="name-{{ include.form }}" name="fields[name]" type="text" autocomplete="given-name" required>
+  </div>
+  <div class="field">
+    <label for="email-{{ include.form }}">Email</label>
+    <input id="email-{{ include.form }}" name="fields[email]" type="email" autocomplete="email" required>
+  </div>
+  <label class="consent">
+    <input type="checkbox" name="consent" required>
+    <span>Yes, send me this freebie and add me to Melissa's newsletter. I can unsubscribe at any time. <a href="{{ '/privacy/' | relative_url }}">Privacy policy</a></span>
+  </label>
+  <button class="btn" type="submit">{{ include.button | default: "Get Free Access" }}</button>
+  <p class="form-error" role="alert"></p>
+  <p class="form-note">No spam. Unsubscribe at any time.</p>
+</form>
