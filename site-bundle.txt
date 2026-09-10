@@ -1,0 +1,8 @@
+=====DELETE assets/img/cert-1.png=====
+=====DELETE assets/img/cert-2.png=====
+=====DELETE assets/img/cert-3.png=====
+=====DELETE assets/img/cert-4.png=====
+=====DELETE assets/img/cert-5.png=====
+=====DELETE assets/img/cert-6.png=====
+=====DELETE assets/img/cert-7.png=====
+=====DELETE assets/img/cert-8.png=====
