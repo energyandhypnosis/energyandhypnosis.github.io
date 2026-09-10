@@ -1,0 +1,21 @@
+{%- comment -%}
+  Phone mock-up showing a real YouTube video. Change the video and text in _data/settings.yml → featured_video.
+{%- endcomment -%}
+{%- assign v = site.data.settings.featured_video -%}
+<a class="phone-mock" href="https://www.youtube.com/watch?v={{ v.youtube_id }}" target="_blank" rel="noopener" aria-label="Watch {{ v.title }} on YouTube">
+  <div class="pm-screen">
+    <div class="pm-status"><span>9:41</span><span class="pm-island"></span><span class="pm-icons">▮▮▮</span></div>
+    <div class="pm-video"><img src="https://i.ytimg.com/vi/{{ v.youtube_id }}/hqdefault.jpg" alt="" loading="lazy"></div>
+    <div class="pm-progress"><span></span></div>
+    <div class="pm-body">
+      <p class="pm-title">{{ v.title }}</p>
+      <p class="pm-meta">{{ v.caption }}</p>
+      <div class="pm-channel">
+        <img class="pm-avatar" src="{{ '/assets/img/mel-portrait.png' | relative_url }}" alt="">
+        <span>Melissa Brown<small>@MelissaBrownEnergy</small></span>
+        <span class="pm-sub">Subscribe</span>
+      </div>
+      <div class="pm-chips"><span class="pm-chip">▶ Watch now</span><span class="pm-chip">Free hypnosis</span><span class="pm-chip">Healing</span></div>
+    </div>
+  </div>
+</a>
