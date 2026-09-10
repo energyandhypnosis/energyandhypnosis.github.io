@@ -41,6 +41,13 @@ downloads:
   audio_mp3: /assets/downloads/free-hypnosis-audio.mp3
   audio_title: Free Guided Hypnosis Audio
 
+# ── Featured YouTube video (the phone in the "Let's Connect" section) ──
+# youtube_id is the part after "watch?v=" in the video link.
+featured_video:
+  youtube_id: NGRjZcTElIg
+  title: 3 Reasons Why You Self-Sabotage and How to Stop
+  caption: Free hypnosis & healing videos on YouTube
+
 # ── Social links ──────────────────────────────────────────────
 social:
   - { name: Facebook,  url: "https://www.facebook.com/profile.php?id=61580020853203", icon: facebook }
