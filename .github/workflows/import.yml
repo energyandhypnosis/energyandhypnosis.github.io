@@ -1,7 +1,7 @@
 name: Import site files & images
 on:
   push:
-    paths: ["site-bundle.tar.gz", "images.txt"]
+    paths: ["site-bundle.txt", "images.txt"]
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,11 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unpack site bundle
+        shell: python
         run: |
-          if [ -f site-bundle.tar.gz ]; then
-            tar xzf site-bundle.tar.gz
-            git rm -q site-bundle.tar.gz
-          fi
+          import os, re, subprocess
+          if os.path.exists("site-bundle.txt"):
+              t = open("site-bundle.txt", encoding="utf-8").read()
+              t = t.replace("@@BT@@", chr(96)).replace("@@DS@@", "$" + "{")
+              parts = re.split(r"^=====FILE (.+?)=====\n", t, flags=re.M)
+              for i in range(1, len(parts), 2):
+                  path, body = parts[i].strip(), parts[i + 1].rstrip("\n") + "\n"
+                  if os.path.dirname(path):
+                      os.makedirs(os.path.dirname(path), exist_ok=True)
+                  open(path, "w", encoding="utf-8").write(body)
+                  print("wrote", path)
+              subprocess.run(["git", "rm", "-q", "site-bundle.txt"], check=True)
       - name: Download images and fonts
         run: |
           [ -f images.txt ] || exit 0
@@ -24,7 +33,7 @@ jobs:
             case "$path" in ""|\#*) continue ;; esac
             if [ ! -s "$path" ]; then
               mkdir -p "$(dirname "$path")"
-              curl -fsSL --retry 3 -o "$path" "$url" && echo "✓ $path" || echo "::warning::Could not download $url"
+              curl -fsSL --retry 3 -o "$path" "$url" && echo "ok $path" || echo "::warning::Could not download $url"
             fi
           done < images.txt
       - name: Commit
