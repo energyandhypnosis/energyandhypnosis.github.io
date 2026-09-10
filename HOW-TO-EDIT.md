@@ -13,6 +13,11 @@ Everything is edited on github.com. After you **Commit changes**, the site updat
 Open `assets/img` → **Add file → Upload files** → drag your picture in → **Commit changes**.
 Use it in an article with: `![Describe the picture](/assets/img/your-picture.jpg)`
 
+## Add a certificate to the slideshow
+Open `assets/img/certificates` → **Add file → Upload files** → drag your certificate photo in → **Commit changes**.
+It appears in the homepage slideshow automatically (sorted by file name — start names with a number, e.g. `09-reiki.jpg`, to control the order).
+To remove one, open the photo in that folder → **⋯ menu → Delete file**.
+
 ## Change a setting
 Open `_data/settings.yml`, click the ✏️ pencil, change the text between the quotes, **Commit changes**.
 
