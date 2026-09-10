@@ -1,0 +1,41 @@
+name: Import site files & images
+on:
+  push:
+    paths: ["site-bundle.tar.gz", "images.txt"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack site bundle
+        run: |
+          if [ -f site-bundle.tar.gz ]; then
+            tar xzf site-bundle.tar.gz
+            git rm -q site-bundle.tar.gz
+          fi
+      - name: Download images and fonts
+        run: |
+          [ -f images.txt ] || exit 0
+          while read -r path url; do
+            case "$path" in ""|\#*) continue ;; esac
+            if [ ! -s "$path" ]; then
+              mkdir -p "$(dirname "$path")"
+              curl -fsSL --retry 3 -o "$path" "$url" && echo "✓ $path" || echo "::warning::Could not download $url"
+            fi
+          done < images.txt
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Import site files and images"
+          git push
+      - name: Rebuild GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages will build on its own"
