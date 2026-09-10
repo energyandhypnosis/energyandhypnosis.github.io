@@ -1,0 +1,24 @@
+{%- comment -%}
+  Shows EVERY image uploaded to assets/img/certificates/ (alphabetical by file name).
+  To add a certificate: upload a .jpg/.png/.webp into that folder. Nothing else to edit.
+{%- endcomment -%}
+{%- assign cert_files = site.static_files | where_exp: "f", "f.path contains '/assets/img/certificates/'" | sort: "path" -%}
+<div class="slideshow" data-slideshow>
+  <div class="ss-track" tabindex="0" aria-label="Certificates slideshow">
+    {%- for f in cert_files -%}
+      {%- assign ext = f.extname | downcase -%}
+      {%- if ext == ".png" or ext == ".jpg" or ext == ".jpeg" or ext == ".webp" or ext == ".gif" -%}
+      <button type="button" class="ss-slide" data-full="{{ f.path | relative_url }}" aria-label="Enlarge certificate">
+        <img src="{{ f.path | relative_url }}" alt="Certificate" loading="lazy">
+      </button>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <button type="button" class="ss-btn ss-prev" aria-label="Previous certificate">&#8249;</button>
+  <button type="button" class="ss-btn ss-next" aria-label="Next certificate">&#8250;</button>
+  <div class="ss-dots" aria-hidden="true"></div>
+</div>
+<dialog class="lightbox" aria-label="Certificate">
+  <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="Certificate">
+</dialog>
