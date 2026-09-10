@@ -96,3 +96,55 @@ document.querySelectorAll('[data-youtube]').forEach((b) => {
   const params = new URLSearchParams({ action: 'TEMPLATE', text: title, dates: `${fmt(start)}/${fmt(end)}`, ctz: 'Europe/Budapest', recur: `RRULE:FREQ=WEEKLY;BYDAY=${code}`, details: link ? `Join on Zoom: ${link}` : 'The Zoom link is in your email.' });
   a.href = `https://calendar.google.com/calendar/render?${params}`;
 })();
+
+// Certificates slideshow + lightbox
+document.querySelectorAll('[data-slideshow]').forEach((ss) => {
+  const track = ss.querySelector('.ss-track');
+  const slides = [...track.children];
+  const prev = ss.querySelector('.ss-prev');
+  const next = ss.querySelector('.ss-next');
+  const dotsWrap = ss.querySelector('.ss-dots');
+  if (!slides.length) { ss.hidden = true; return; }
+  const step = () => slides[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 20);
+  const perView = () => Math.max(1, Math.round(track.clientWidth / step()));
+  const pages = () => Math.max(1, slides.length - perView() + 1);
+  const index = () => Math.round(track.scrollLeft / step());
+  const go = (i) => track.scrollTo({ left: Math.max(0, Math.min(i, pages() - 1)) * step() });
+  const renderDots = () => {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < pages(); i++) {
+      const d = document.createElement('button');
+      d.type = 'button'; d.addEventListener('click', () => go(i));
+      dotsWrap.appendChild(d);
+    }
+    update();
+  };
+  const update = () => {
+    const i = index();
+    [...dotsWrap.children].forEach((d, n) => d.setAttribute('aria-current', n === i));
+    prev.disabled = i <= 0; next.disabled = i >= pages() - 1;
+    const hide = pages() <= 1; prev.hidden = next.hidden = dotsWrap.hidden = hide;
+  };
+  prev.addEventListener('click', () => go(index() - 1));
+  next.addEventListener('click', () => go(index() + 1));
+  track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  window.addEventListener('resize', renderDots);
+  renderDots();
+
+  // gentle autoplay, paused while the visitor interacts
+  let paused = false;
+  ['mouseenter', 'focusin', 'touchstart'].forEach((ev) => ss.addEventListener(ev, () => { paused = true; }, { passive: true }));
+  ['mouseleave', 'focusout'].forEach((ev) => ss.addEventListener(ev, () => { paused = false; }));
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(() => { if (!paused && pages() > 1) go(index() >= pages() - 1 ? 0 : index() + 1); }, 4500);
+  }
+
+  // click to enlarge
+  const box = ss.parentElement.querySelector('.lightbox');
+  if (box && box.showModal) {
+    slides.forEach((s) => s.addEventListener('click', () => { box.querySelector('img').src = s.dataset.full; box.showModal(); }));
+    box.addEventListener('click', () => box.close());
+  } else {
+    slides.forEach((s) => s.addEventListener('click', () => window.open(s.dataset.full, '_blank')));
+  }
+});
